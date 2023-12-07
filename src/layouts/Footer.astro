@@ -1,0 +1,33 @@
+---
+import Logo from "../components/Logo.astro";
+
+const menuList = ["菜單1", "菜單2", "菜單3", "菜單4", "菜單1"];
+---
+
+<div class="h-[90px] w-[100vw] bg-footer-bg flex justify-center items-center">
+  <div
+    class="flex max-w-[1440px] min-w-[768px] justify-between items-center flex-1"
+  >
+    <div
+      class="flex max-w-[750px] min-w-[520px] gap-[20px] flex-1 items-center"
+    >
+      <Logo />
+      <div class="w-[2px] h-[25px] border border-solid border-gray-400"></div>
+      <div class="flex items-center gap-[50px]">
+        {
+          menuList.map((menu) => (
+            <div class="flex justify-center items-center text-sm font-normal text-menu-color cursor-pointer">
+              {menu}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <div
+      class="flex min-w-[196px] justify-end mr-[20px] items-center flex-1 text-gray-500 text-xs text-center"
+    >
+      Copyright ©2023 RNGuardian All Rights Reserved
+    </div>
+  </div>
+  <style></style>
+</div>
