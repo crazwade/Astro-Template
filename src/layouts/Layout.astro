@@ -3,11 +3,7 @@ import Header from "./Header.astro";
 import Footer from "./Footer.astro";
 import Content from "./Content.astro";
 
-interface Props {
-  title: string;
-}
-
-const { title } = Astro.props;
+const { title } = Astro.props as { title: string };
 ---
 
 <!doctype html>
@@ -20,9 +16,11 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="w-[100vw] flex flex-col items-center">
+  <body class="w-[100vw] h-[100vh] flex flex-col items-center">
     <Header />
-    <Content />
+    <Content>
+      <slot />
+    </Content>
     <Footer />
   </body>
 </html>

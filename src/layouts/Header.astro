@@ -1,7 +1,6 @@
 ---
 import Logo from "../components/Logo.astro";
-
-const menuList = ["菜單1", "菜單2", "菜單3", "菜單4", "菜單1"];
+import pages from "../pages";
 ---
 
 <div
@@ -14,10 +13,14 @@ const menuList = ["菜單1", "菜單2", "菜單3", "菜單4", "菜單1"];
     <div class="flex items-center gap-[60px] mr-[20px]">
       <div class="flex items-center gap-[60px]">
         {
-          menuList.map((menu) => (
-            <div class="flex justify-center items-center text-sm font-normal text-menu-color cursor-pointer">
-              {menu}
-            </div>
+          pages.map((item) => (
+            <>
+              <a
+                class="flex justify-center items-center text-sm font-normal text-menu-color cursor-pointer"
+                href={item.link}>
+                {item.name}
+              </a>
+            </>
           ))
         }
         <!-- <div

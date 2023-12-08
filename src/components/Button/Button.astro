@@ -1,0 +1,23 @@
+---
+const { disabled, bg, customStyle, borderradius } = Astro.props as {
+  disabled: boolean;
+  bg: string;
+  customStyle?: string;
+  borderradius: "rounded-md" | "rounded-full";
+};
+---
+
+<button
+  type="button"
+  class={`
+    ${bg}
+    ${customStyle}
+    ${borderradius}
+    flex justify-center items-center
+    hover:bg-opacity-80 active:scale-95
+    mx-2
+  `}
+  disabled={disabled}
+>
+  <slot />
+</button>

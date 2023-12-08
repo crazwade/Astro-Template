@@ -1,0 +1,14 @@
+---
+import Button from "./Button.astro";
+const { bg, text, customStyle } = Astro.props as {
+  bg: string;
+  text: string;
+  customStyle?: string;
+};
+---
+
+<Button bg={bg} borderradius="rounded-md" customStyle={customStyle}>
+  <div class="font-bold text-lg text-white">
+    {text}
+  </div>
+</Button>

@@ -1,9 +1,45 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import TextButton from "../components/Button/textButton.astro";
+import IconButton from "../components/Button/iconButton.astro";
+import arrowRight from "../assets/arrowRight.png";
+import arrowLeft from "../assets/arrowLeft.png";
+import copy from "../assets/copy.png";
 ---
 
 <Layout title="Welcome to Astro.">
-  <main class="text-black"> index</main>
+  <div class="flex flex-col justify-center items-center">
+    <main class="text-black">Index Page</main>
+    <div class="flex justify-between">
+      <TextButton
+        disabled={false}
+        text="開獎詳情"
+        bg="bg-[#119FB2]"
+        customStyle="py-2"
+      />
+      <TextButton disabled={false} text="查詢" bg="bg-[#41BDBD]" />
+      <TextButton disabled={false} text="確認" bg="bg-[#41BDBD]" />
+
+      <IconButton
+        disabled={false}
+        customStyle="w-[50px] h-[50px]"
+        bg="bg-[#119FB2] bg-opacity-60"
+        iconSrc={arrowRight}
+      />
+      <IconButton
+        disabled={false}
+        customStyle="w-[50px] h-[50px]"
+        bg="bg-[#119FB2] bg-opacity-60"
+        iconSrc={arrowLeft}
+      />
+      <IconButton
+        disabled={false}
+        customStyle="w-[28px] h-[28px]"
+        bg="bg-[#4FD0D9]"
+        iconSrc={copy}
+      />
+    </div>
+  </div>
 </Layout>
 
 <style></style>

@@ -1,0 +1,13 @@
+---
+import Button from "./Button.astro";
+import { Image } from "astro:assets";
+const { bg, iconSrc, customStyle } = Astro.props as {
+  iconSrc: ImageMetadata;
+  bg: string;
+  customStyle?: string;
+};
+---
+
+<Button bg={bg} customStyle={customStyle} borderradius="rounded-full">
+  <Image src={iconSrc} alt="icon" />
+</Button>
